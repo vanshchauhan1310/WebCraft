@@ -1,0 +1,27 @@
+
+.mybox{
+
+  background-color: aqua;
+  font-size: 40;
+  border: 4px solid red;
+  margin: 10px 20px 60px 40px;
+  padding: 10px 20px 30px 40px;
+}
+
+.mybox h1{
+  color: blue;
+}
+.mybox p{
+  color: white;
+  background-color: black;
+}
+
+.mybox img{
+  height: 500px;
+  width: 200px;
+}
+
+.mybox .myimage {
+  border: 4px solid blue;
+  width: 200px;
+}
