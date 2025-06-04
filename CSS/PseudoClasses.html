@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .card {
+    width: 200px;
+    padding: 20px;
+    background: rgb(255, 0, 0);
+    border-radius: 8px;
+
+  }
+  
+  .card:hover {
+    background-color: aqua;
+  }
+  
+  .card:active {
+    background-color: blue;
+  }
+
+
+   input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  
+  input:focus {
+    border-color: #4CAF50; /* Green border */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+    outline: none; /* Removes default browser outline */
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h3>Product Name</h3>
+  <p>Description of the product</p>
+</div>
+
+<br>
+<br>
+
+<label>Name:</label>
+<input type="text">
+
+</body>
+</html>

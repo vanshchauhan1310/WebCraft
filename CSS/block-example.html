@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <style>
+.block-example {
+  display: block;
+  background: lightblue;
+  margin: 10px;
+  padding: 10px;
+    }
+
+.inline-example {
+  display: inline;
+  background: lightcoral;
+  padding: 2px;
+  height: 100px;
+  width: 200px;
+}
+
+.inline-block-example {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: lightgreen;
+  margin: 5px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #eee;
+  padding: 10px;
+}
+.flex-container div {
+  background: lightpink;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 equal columns */
+  gap: 10px;
+  background-color: black;
+}
+ .grid-container div {
+  background: rgb(255, 72, 0);
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.flexbox{
+    background-color: cadetblue;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+</style>
+</head>
+<body>
+    
+
+<div class="block-example">I'm a block</div>
+<div class="block-example">I'm another block</div>
+
+<br>
+<br>
+
+<div class="inline-example">I'm a block</div>
+<div class="inline-example">I'm another block</div>
+
+<br>
+<br>
+
+<div class="inline-block-example">Box 1</div>
+<div class="inline-block-example">Box 2</div>
+<div class="inline-block-example">Box 1</div>
+<div class="inline-block-example">Box 2</div><div class="inline-block-example">Box 1</div>
+<div class="inline-block-example">Box 2</div>
+
+<br>
+<br>
+
+<div class="flex-container">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+
+<br>
+<br>
+
+<div class="grid-container">
+
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+
+
+<div class="hidden">You can't see me!</div>
+
+<br>
+<br>
+<div class="flexbox">
+    I am a Flex Box
+</div>
+
+
+</body>
+</html>
