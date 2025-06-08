@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    <style>
+        /* Mobile styles */
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            background: #333;
+            padding: 15px;
+        }
+
+        .nav-link {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+        }
+
+        .mobile-menu-button {
+            background: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        /* Initially hide the full menu on mobile */
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* Show menu when mobile button is clicked */
+        .nav-menu.active {
+            display: flex;
+        }
+
+        /* Tablet/Desktop styles */
+        @media (min-width: 768px) {
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .nav-link {
+                border-bottom: none;
+                margin: 0 10px;
+            }
+            
+            .nav-menu {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-header">
+            <a href="#" class="logo">Logo</a>
+            <button class="mobile-menu-button" id="menuButton">☰</button>
+        </div>
+        
+        <div class="nav-menu" id="navMenu">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('menuButton').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

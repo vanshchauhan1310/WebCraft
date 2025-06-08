@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Document</title>
+       <style>
+
+
+.static-box {
+  position: static; /* Default value */
+  border: 2px solid #333;
+  padding: 20px;
+  width: 100px;
+}
+
+.relative-box {
+  position: relative;
+  top: 30px;
+  left: 50px;
+  background-color: lightblue;
+  border: 2px solid blue;
+  width: 200px;
+
+}
+
+.parent {
+  position: relative; /* Establishes containing block */
+  height: 200px;
+  top: 50px;
+  background: #240185;
+}
+
+.absolute-box {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: lightcoral;
+  width: 100px;
+  height: 100px;
+}
+
+.fixed-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: lightgreen;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background: #000000;
+    color: white;
+    padding: 15px;
+   z-index: 100;
+  }
+
+  body{
+    height: 500vh;
+  }
+       </style>
+</head>
+<body>
+
+    <div class="static-box">
+        Hello I am Static Box 
+    </div>
+
+     
+    <div class="relative-box">
+        Hello I am Relative Box
+    </div>
+
+    <div class="parent">
+        <div class="absolute-box">
+            Hello I am absolute box 
+        </div>
+    </div>
+
+<div class="fixed-box">
+    Hello I  am Fixed Box 
+</div>
+
+<div style="height: 800px; background: #d62c2c; margin-top: 50px; ">
+  <div class="sticky-header box">Sticky Position (Scroll to see effect)</div>
+  <p style="padding: 20px;">Scroll down to see sticky behavior...</p>
+</div>
+
+
+
+</body>
+</html>
