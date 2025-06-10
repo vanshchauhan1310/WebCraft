@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // var (Old Way - Avoid in Modern JS)
+        // Function-scoped (not block-scoped)
+        // Can be redeclared and updated
+
+        var b = 30;
+        b = 40;
+        var b = 50; 
+
+
+        if (true) {
+         var x = 10; 
+        }
+        console.log(b)
+        
+        console.log(x);
+
+
+        // let(Modern Way - Preferred for Variables)
+        // Block - scoped(only accessible within {}).
+        // Can be updated but not redeclared.
+
+        let a = 10;
+        a = 20; 
+
+        if (true) {
+        let y = 5; 
+        console.log("Value of Y is ",y);
+
+        }
+        
+        console.log("Value Of A IS ",a)
+
+
+        //const (Modern Way - Preferred for Constants)
+        // Block-scoped (like let).     
+        // Cannot be reassigned or redeclared.
+        // Must be initialized at declaration.
+
+        // const c = 50;
+        // c = 60; 
+        // const c = 70;
+
+
+
+
+
+        let age = 25;          
+        let price = 99.99;     
+        let negative = -10;
+        console.log(age,price,negative)    
+        console.log(typeof age); 
+        console.log(typeof price);
+        console.log(typeof negative);
+
+
+        let name = "vansh";
+        let greeting = 'Hello, World!';
+        let backticks = `Hi, ${name}!`;   
+        // combination of String and variable is known as template literal 
+        console.log(backticks)
+        console.log(typeof name); 
+
+
+        let isStudent = true;
+        let isLoggedIn = false;
+        console.log(typeof isStudent); 
+
+
+        let person = {
+          name: "Alice",
+          age: 25,
+          isStudent: true
+        };
+         
+        console.log(typeof person); 
+        console.log(person.name)
+
+        let fruits = ["Apple", "Banana", "Mango"];
+        console.log(typeof fruits);
+        console.log(fruits);
+      
+
+
+        let num1 = 10;
+        let num2 = "10"
+
+        if(num1==num2){
+            console.log(true)
+        }
+
+        if(num1===num2){
+            console.log(true)
+        }
+        else{
+            console.log(false)
+        }
+
+
+    </script>
+    
+</body>
+</html>
