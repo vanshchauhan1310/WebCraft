@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            margin: 50px;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+</style>
+</head>
+
+<body>
+
+    <!-- <header id="header">This is the header</header>
+    
+    <button class="btn">Button 1</button>
+    <button class="btn">Button 2</button>
+    <button class="btn">Button 3</button>
+    
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    
+    <div class="container">
+        <p>Container 1</p>
+    </div>
+
+     <div class="container">
+        <p>Container 2</p>
+    </div>
+    
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div> -->
+
+<!-- 
+     <h1>Original Title</h1>
+    
+    <a href="rihttps://oginal-site.com">Visit Original Site</a>
+    
+    <div id="box">This is a box</div> -->
+
+
+<!-- <button id="myButton">Click Me</button>
+<p id="output"></p> -->
+
+
+  <!-- <div class="tooltip">
+        Hover over me
+        <span class="tooltiptext">I'm a tooltip!</span>
+    </div> -->
+
+  <input type="text" id="textInput" placeholder="Type something...">
+  <p id="keyOutput">Last key pressed: </p>
+
+<form id="contactForm">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+   <button type="submit">Submit</button>
+</form>
+<div id="formMessage"></div>  
+
+<script src="ArrowFunction.js"></script>
+</body>
+</html>
