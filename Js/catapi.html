@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat API Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #catContainer {
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        #catImage {
+            max-width: 100%;
+            max-height: 400px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            display: none; /* Hidden by default */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #status {
+            margin: 10px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Cat Generator</h1>
+    <button id="catBtn">Get Random Cat</button>
+    <div id="status">Click the button to see a cat!</div>
+    <div id="catContainer">
+        <img id="catImage" alt="Random cat" src="">
+    </div>
+
+    <script>
+        document.getElementById("catBtn").addEventListener("click", () => {
+            const status = document.getElementById("status");
+            const catImage = document.getElementById("catImage");
+            
+            // Show loading state
+            status.textContent = "Finding a cute cat...";
+            catImage.style.display = "none";
+            
+            fetch("https://api.thecatapi.com/v1/images/search")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(cats => {
+                    if (cats && cats.length > 0) {
+                        catImage.src = cats[0].url;
+                        catImage.style.display = "block";
+                        status.textContent = "Here's your cat!";
+                    } else {
+                        throw new Error("No cats found");
+                    }
+                })
+                .catch(error => {
+                    status.textContent = "Failed to find a cat. Please try again.";
+                    console.error("Error:", error);
+                });
+        });
+    </script>
+</body>
+</html>
