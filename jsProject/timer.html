@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomodoro Timer</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    #timer { font-size: 5em; margin: 20px; }
+    button { padding: 10px 20px; margin: 5px; font-size: 1em; cursor: pointer; }
+    .work { color: #d9534f; }
+    .break { color: #5cb85c; }
+  </style>
+</head>
+<body>
+  <h1>Pomodoro Timer</h1>
+  <div id="timer">25:00</div>
+  <button id="start-btn">Start</button>
+  <button id="reset-btn">Reset</button>
+  
+  <script>
+    let timer;
+    let timeLeft = 25 * 60; // 25 minutes in seconds
+    let isRunning = false;
+    let isWorkTime = true;
+    
+    document.getElementById('start-btn').addEventListener('click', toggleTimer);
+    document.getElementById('reset-btn').addEventListener('click', resetTimer);
+    
+    function toggleTimer() {
+      if(isRunning) {
+        clearInterval(timer);
+        document.getElementById('start-btn').textContent = 'Start';
+      } else {
+        timer = setInterval(updateTimer, 1000);
+        document.getElementById('start-btn').textContent = 'Pause';
+      }
+      isRunning = !isRunning;
+    }
+    
+    function updateTimer() {
+      timeLeft--;
+      
+      if(timeLeft < 0) {
+        clearInterval(timer);
+        isWorkTime = !isWorkTime;
+        timeLeft = isWorkTime ? 25 * 60 : 5 * 60;
+        alert(isWorkTime ? 'Work time!' : 'Take a break!');
+        timer = setInterval(updateTimer, 1000);
+      }
+      
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      const timerEl = document.getElementById('timer');
+      
+      timerEl.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      timerEl.className = isWorkTime ? 'work' : 'break';
+    }
+    
+    function resetTimer() {
+      clearInterval(timer);
+      isRunning = false;
+      isWorkTime = true;
+      timeLeft = 25 * 60;
+      document.getElementById('timer').textContent = '25:00';
+      document.getElementById('start-btn').textContent = 'Start';
+      document.getElementById('timer').className = 'work';
+    }
+  </script>
+</body>
+</html>

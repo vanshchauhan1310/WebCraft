@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 0 auto; padding: 20px; }
+    .question { font-size: 1.2em; margin-bottom: 15px; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    button { padding: 10px; cursor: pointer; }
+    .score { margin-top: 20px; font-weight: bold; }
+    .correct { background-color: #a1e9a1; }
+    .wrong { background-color: #ff9e9e; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Quiz</h1>
+  <div id="quiz-container">
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+  </div>
+  <div class="score" id="score"></div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What does DOM stand for?",
+        options: ["Document Object Model", "Data Object Model", "Digital Object Maker"],
+        answer: 0
+      },
+      {
+        question: "Which keyword declares a variable in JavaScript?",
+        options: ["var", "let", "both"],
+        answer: 2
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const questionEl = document.getElementById('question');
+      
+      const optionsEl = document.getElementById('options');
+      
+      questionEl.textContent = quizData[currentQuestion].question;
+      
+      optionsEl.innerHTML = '';
+      
+      quizData[currentQuestion].options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        console.log("This is Option of current Question " + button)
+        console.log("This is index of current Question " + index)
+        button.addEventListener('click', () => checkAnswer(index));
+        optionsEl.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selectedIndex) {
+      const correctIndex = quizData[currentQuestion].answer;
+      console.log("This is the index of correct option " + correctIndex)
+
+      // currentquestion 
+      // SelectedOption index 
+
+      // currentQuestion -> option -> index  
+
+      const buttons = document.querySelectorAll('#options button');
+      
+      buttons.forEach((button, index) => {
+        button.disabled = true;
+        if(index === correctIndex) button.classList.add('correct');
+        if(index === selectedIndex && index !== correctIndex) button.classList.add('wrong');
+      });
+
+      if(selectedIndex === correctIndex) score++;
+      
+      document.getElementById('score').textContent = `Score: ${score}/${quizData.length}`;
+      
+      setTimeout(() => {
+        currentQuestion++;
+        if(currentQuestion < quizData.length) loadQuestion();
+        else alert(`Quiz finished! Your score: ${score}/${quizData.length}`);
+      }, 1000);
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
