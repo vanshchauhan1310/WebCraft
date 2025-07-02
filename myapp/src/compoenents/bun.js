@@ -4,7 +4,7 @@ import './bun.css'
 const bun = () => {
   return (
     <div class="container">
-            <div class="logo">Your Name</div>
+          <h1 class="text-3xl font-bold underline">Hello world!</h1>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="./about.html">About</a></li>
